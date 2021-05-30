@@ -1,0 +1,40 @@
+<body>
+  <h2>PREMIER LEAGUE Random Played Match - {{seasonYear}}</h2>
+
+  <div class="bgDiv"></div>
+  <h4 style="top: 195px; left: 182px; width: 385px;">-Played Match Result-</h4>
+  <h4 style="top: 195px; left: 565px; width: 395px;">-Team 01-</h4>
+  <h4 style="top: 195px; left: 955px; width: 397px;">-Team 02-</h4>
+  <h4 style="top: 495px; left: 182px; width: 385px;">-Match Played Date-</h4>
+  <div class="lineDiv" style="left: 565px;"></div>
+  <div class="lineDiv"  style="left: 955px;"></div>
+  <button mat-raised-button style="top: 145px; left:200px; width: 200px;" (click)="premierLeagueRandomMatch();" [disabled]="randomMatch.length == 0 && emptyList == true">
+    Let's Play!!
+  </button>
+  <button mat-raised-button style="top: 145px; left:970px; width: 365px;" routerLink="/league-table">View Premier League Table</button>
+
+  <div *ngFor="let randomDetails of randomMatch">
+    <span style="width: 375px; top: 275px; left: 575px;">Team Name : {{randomDetails["clubName"]}}</span>
+    <span style="width: 380px; top: 275px; left: 965px;">Team Name : {{randomDetails["rival"]}}</span>
+    <span style="width: 230px; top: 350px; left: 575px;">Goal Scored :  {{randomDetails["numOfGoalsScored"]}}</span>
+    <span style="width: 230px; top: 350px; left: 965px;">Goal Scored :  {{randomDetails["numOfGoalsReceived"]}}</span>
+    <span style="width: 230px; top: 425px; left: 720px;">Goal Received :  {{randomDetails["numOfGoalsReceived"]}}</span>
+    <span style="width: 230px; top: 425px; left: 1115px;">Goal Received :  {{randomDetails["numOfGoalsScored"]}}</span>
+    <span style="width: 230px; top: 500px; left: 575px;">Goal Difference :  {{(randomDetails["numOfGoalsScored"])-(randomDetails["numOfGoalsReceived"])}}</span>
+    <span style="width: 230px; top: 500px; left: 965px;">Goal Difference :  {{(randomDetails["numOfGoalsReceived"])-(randomDetails["numOfGoalsScored"])}}</span>
+    <span style="width: 373px; top: 570px; left: 187px; text-align: center;">Date :  {{randomDetails["playedMatchDate"]}}</span>
+    <div *ngIf="randomDetails['win'] == 1">
+      <span style="width: 373px; top: 275px; left: 187px; text-align: center;">{{randomDetails["clubName"]}} Won the Match</span>
+    </div>
+    <div *ngIf="randomDetails['defeats'] == 1">
+      <span style="width: 373px; top: 275px; left: 187px; text-align: center;">{{randomDetails["rival"]}} Won the Match</span>
+    </div>
+    <div *ngIf="randomDetails['draws'] == 1">
+      <span style="width: 373px; top: 275px; left: 187px; text-align: center;">Played Match was Draw</span>
+    </div>
+  </div>
+
+  <div *ngIf="randomMatch.length == 0 && emptyList == true">
+    <h3>***The Premier League hasn't Enough Clubs for Play Match!!***</h3>
+  </div>
+</body>

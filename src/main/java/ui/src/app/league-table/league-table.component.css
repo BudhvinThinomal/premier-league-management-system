@@ -1,0 +1,96 @@
+html,body {
+  background-size: 100% 100%;
+  background-image: url('../../assets/backgroundImg/angularSubTopic.png');
+  background-repeat: no-repeat;
+  margin: 0px;
+  padding: 0px;
+  font-size: 16px;
+  background-color : #80d4ff;
+  height: 92%;
+  background-attachment: fixed;
+}
+
+h4 {
+  background-color : #ffffff;
+  color : #4d004d;
+  font-weight : bold;
+  border-radius : 10px;
+  font-size: 18px;
+  text-align: center;
+  padding: 5px;
+  height: 30px;
+  width: 430px;
+  display: inline-block;
+  position:absolute;
+  top:60px;
+  left:60px;
+  margin: 1% 1% 1% 1%;
+}
+
+table{
+  position: absolute;
+  top: 95px;
+  margin: 1% 5% 0% 5%;
+  text-align: center;
+  font-size: 14px;
+}
+
+tr {
+  background-color: #4d004d;
+  color: #ffffff;
+}
+
+td {
+  height: 28px;
+  opacity: 0.9;
+  background-color: #ffffff;
+  color: #4d004d;
+  border: 2px #4d004d solid;
+}
+
+.mainColumn {
+  height: 40px;
+  width: 250px;
+  border-right: 2px #ffffff solid;
+}
+
+.longColumn {
+  height: 40px;
+  width: 120px;
+  border-left: 2px #ffffff solid;
+}
+
+.normalColumn {
+  height: 40px;
+  width: 100px;
+  border-left: 2px #ffffff solid;
+}
+
+h3{
+  background-color : #ffffff;
+  color: #4d004d;
+  font-weight : bold;
+  font-size : 25px;
+  border-radius: 10px;
+  padding : 10px;
+  opacity: 0.8;
+  position: absolute;
+  top: 400px;
+  left: 440px;
+}
+
+.toggleBtns {
+  background-color : #ffffff;
+  margin: 1px 1px 1px 1px;
+  top: 73px;
+  left: 965px;
+  border: 1px solid #4d004d;
+  position: absolute;
+}
+
+.mat-button-toggle {
+  font-weight: bold;
+  font-size: 14px;
+  height: 30px;
+  color: #4d004d;
+}

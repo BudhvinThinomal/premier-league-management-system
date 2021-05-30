@@ -1,0 +1,67 @@
+<body>
+<h2>Search PREMIER LEAGUE Played Matches - {{seasonYear}}</h2>
+
+  <div class="mainScroll">
+
+  <div *ngFor="let played of selectMatches">
+    <div class="bgDiv">
+
+      <span style="width: 170px; top: 96px; left:20px; padding : 10px;">Date :  {{played["playedMatchDate"]}}</span>
+      <span style="width: 350px; top: 25px; left:190px; padding : 21px;">Team Name : {{played["clubName"]}}</span>
+      <span style="width: 350px; top: 145px; left:190px; padding : 21px;">Team Name : {{played["rival"]}}</span>
+      <span style="width: 175px; top: 25px; left: 550px;">Goal Scored :  {{played["numOfGoalsScored"]}}</span>
+      <span style="width: 175px; top: 25px; left: 730px;">Goal Difference :  {{(played["numOfGoalsScored"]) - (played["numOfGoalsReceived"])}}</span>
+      <span style="width: 175px; top: 57px; left: 550px;">Goal Received :  {{played["numOfGoalsReceived"]}}</span>
+      <span style="width: 175px; top: 57px; left: 730px;">Points :  {{played["numOfPoints"]}}</span>
+
+      <span style="width: 175px; top: 145px; left: 550px;">Goal Scored :  {{played["numOfGoalsReceived"]}}</span>
+      <span style="width: 175px; top: 145px; left: 730px;">Goal Difference :  {{(played["numOfGoalsReceived"]) - (played["numOfGoalsScored"])}}</span>
+      <span style="width: 175px; top: 177px; left: 550px;">Goal Received :  {{played["numOfGoalsScored"]}}</span>
+
+      <div *ngIf="played['win'] == 1;">
+        <span style="width: 175px; top: 177px; left: 730px;">Points :  0</span>
+        <span style="width: 295px; top: 96px; left: 870px; padding : 10px; text-align: center;">{{played["clubName"]}}  Won the Match</span>
+      </div>
+      <div *ngIf="played['defeats'] == 1;">
+        <span style="width: 175px; top: 177px; left: 730px;">Points :  3</span>
+        <span style="width: 295px; top: 96px; left: 870px; padding : 10px; text-align: center;">{{played["rival"]}}  Won the Match</span>
+      </div>
+      <div *ngIf="played['draws'] == 1;">
+        <span style="width: 175px; top: 177px; left: 730px;">Points :  {{played["numOfPoints"]}}</span>
+        <span style="width: 295px; top: 96px; left: 870px; padding : 10px; text-align: center;">Played Match was Draw</span>
+      </div>
+
+    </div>
+  </div>
+
+  </div>
+
+  <div class="textField">
+    <mat-form-field appearance="fill" color="accent">
+      <mat-label>Please Enter Date : </mat-label>
+      <input matInput #enteredDate="ngModel" [(ngModel)]="selectDate" [matDatepicker]="datepicker" [max]="lastDate" placeholder="(DD/MM/YYYY)">
+      <mat-datepicker-toggle [for]="datepicker" matSuffix></mat-datepicker-toggle>
+      <mat-datepicker #datepicker></mat-datepicker>
+      <mat-error *ngIf="enteredDate.hasError('matDatepickerParse')">
+        Please enter the date using valid format!!
+      </mat-error>
+      <mat-error *ngIf="enteredDate.hasError('matDatepickerMax')">
+        ***Please enter the valid date!!***
+      </mat-error>
+    </mat-form-field>
+  </div>
+  <button mat-raised-button (click)="premierLeagueSearchPlayedMatch()"
+          [disabled]="enteredDate.hasError('matDatepickerMax')"
+          [disabled]="enteredDate.hasError('matDatepickerParse')">
+    SEARCH
+  </button>
+
+  <div *ngIf="searchEmpty == true && searchMatches.length != 0">
+    <h3 style="left: 370px;">***The Premier League Clubs hasn't Played Matches for Search Date!!***</h3>
+  </div>
+
+  <div *ngIf="searchMatches.length == 0">
+    <h3 style="left: 400px;">***The Premier League Clubs hasn't Played Matches for Search!!***</h3>
+  </div>
+
+</body>

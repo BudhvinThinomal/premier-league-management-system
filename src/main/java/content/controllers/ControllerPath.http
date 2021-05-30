@@ -1,0 +1,18 @@
+#Get sorted list according to number of points
+GET http://localhost:8080/premier/league/table/points
+###
+
+#Get sorted list according to number of goals scored
+GET http://localhost:8080/premier/league/table/goals
+###
+
+#Get sorted list according to number of wins
+GET http://localhost:8080/premier/league/table/wins
+###
+
+#Get random played match
+GET http://localhost:8080/premier/league/randomMatch
+###
+
+#Get played matches list
+GET http://localhost:8080/premier/league/playedMatches

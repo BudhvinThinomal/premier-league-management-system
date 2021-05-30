@@ -1,0 +1,43 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: "Arial Black", Roboto, "Helvetica Neue", sans-serif; }
+
+
+.menuBtn {
+  background-color:#4d004d;
+  color: #ffffff;
+  font-weight : bold;
+  border-width : 5px;
+  border-radius : 20px / 60px;
+  margin: 1% 1% 1% 1%;
+  top:5px;
+  left:10px;
+}
+
+.mat-icon {
+  bottom: 2px; position: relative;
+}
+
+.mat-menu-item {
+  background-color:#ffffff;
+  color: #4d004d;
+  font-weight : bold;
+  margin: 1% 0% 0% 0%;
+}
+
+.mat-menu-item:hover{
+  color: #ffffff;
+  font-weight : bold;
+}
+.menu {
+  background-color: #4d004d;
+  margin: 1% 0% 0% 0%;
+}
+
+a:link, a:visited{
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  color: #4d004d;
+}

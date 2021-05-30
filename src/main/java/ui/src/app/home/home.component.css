@@ -1,0 +1,40 @@
+html,body {
+  background-size: 100%;
+  background-image: url('../../assets/backgroundImg/menu.png');
+  background-repeat: no-repeat;
+  margin: 0px;
+  padding: 0px;
+  font-weight : bold;
+  background-color : #80d4ff;
+  height: 92%;
+}
+
+h1 {
+  background-color : #4d004d;
+  color : #ffffff;
+  font-weight : bold;
+  font-size : 42px;
+  border-radius : 20px / 60px;
+  text-align: center;
+  padding: 5px;
+  width: 600px;
+  display: inline-block;
+  position:absolute;
+  top:360px;
+  left:440px;
+  margin: 2% 2% 2% 2%;
+}
+
+.mainBtns {
+  background-color: #e6e6e6;
+  color:#4d004d;
+  font-weight : bold;
+  width: 300px;
+  border-radius : 20px / 60px;
+  margin: 1% 1% 1% 1%;
+  outline: none;
+}
+
+.mat-raised-button {
+  font-size: 25px;
+}

@@ -1,0 +1,59 @@
+<body>
+  <br>
+  <div>
+
+    <ng-template [ngIf]="displayTitle=='points'">
+     <h4>Sorted According to The Number of Points</h4>
+    </ng-template>
+    <ng-template [ngIf]="displayTitle=='goals'">
+      <h4>Sorted According to The Goals Scored</h4>
+    </ng-template>
+    <ng-template [ngIf]="displayTitle=='wins'">
+      <h4>Sorted According to The Number of Wins</h4>
+    </ng-template>
+
+    <mat-button-toggle-group class="toggleBtns" value="points">
+      <mat-button-toggle (click)="premierLeaguePoints();" value="points">Sort :- Number of Points</mat-button-toggle>
+      <mat-button-toggle (click)="premierLeagueGoals();" value="goals">Sort :- Goals Scored</mat-button-toggle>
+      <mat-button-toggle (click)="premierLeagueWins();" value="wins">Sort :- Number of Wins</mat-button-toggle>
+    </mat-button-toggle-group>
+
+  </div>
+
+  <table>
+    <tr>
+      <th class="mainColumn">FOOTBALL CLUB NAME</th>
+      <th class="mainColumn">CLUB LOCATION</th>
+      <th class="mainColumn">CHAIRMAN</th>
+      <th class="longColumn">FOUNDED YEAR</th>
+      <th class="normalColumn">MATCHES PLAYED</th>
+      <th class="normalColumn">WIN</th>
+      <th class="normalColumn">DEFEATS</th>
+      <th class="normalColumn">DRAWS</th>
+      <th class="normalColumn">GOALS SCORED</th>
+      <th class="normalColumn">GOALS RECEIVED</th>
+      <th class="longColumn">GOAL DIFFERENCE</th>
+      <th class="normalColumn">POINTS</th>
+    </tr>
+
+    <tr *ngFor="let clubDetails of premierLeagueTable">
+      <td>{{clubDetails["clubName"]}}</td>
+      <td>{{clubDetails["clubLocation"]}}</td>
+      <td>{{clubDetails["chairman"]}}</td>
+      <td>{{clubDetails["foundedYear"]}}</td>
+      <td>{{clubDetails["numOfMatchesPlayed"]}}</td>
+      <td>{{clubDetails["win"]}}</td>
+      <td>{{clubDetails["defeats"]}}</td>
+      <td>{{clubDetails["draws"]}}</td>
+      <td>{{clubDetails["numOfGoalsScored"]}}</td>
+      <td>{{clubDetails["numOfGoalsReceived"]}}</td>
+      <td>{{clubDetails["goalDifference"]}}</td>
+      <td>{{clubDetails["numOfPoints"]}}</td>
+    </tr>
+  </table>
+  <ng-template [ngIf]="premierLeagueTable.length == 0">
+    <h3>***The PREMIER LEAGUE TABLE is Already Empty!!***</h3>
+  </ng-template>
+
+</body>
+
